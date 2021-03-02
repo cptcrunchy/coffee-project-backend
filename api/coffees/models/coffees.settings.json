@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coffees",
+  "info": {
+    "name": "coffees",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "default": 4.99
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "roast": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "medium",
+        "dark",
+        "seasonal"
+      ]
+    }
+  }
+}
